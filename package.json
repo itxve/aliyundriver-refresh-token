@@ -1,0 +1,13 @@
+{
+  "name": "aliyundrive-refresh-token",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "vite": "^2.9.5"
+  },
+  "dependencies": {
+    "@vercel/node": "^1.14.1"
+  }
+}
