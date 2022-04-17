@@ -13,5 +13,5 @@
     "baseUrl": ".",
     "skipLibCheck": true
   },
-  "include": ["src/*.ts"]
+  "include": ["api/*.ts"]
 }
