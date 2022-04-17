@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@vercel/node": "^1.14.1",
+    "@vercel/static-build": "^0.23.1",
     "qrcode": "^1.5.0"
   }
 }
