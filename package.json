@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vercel dev",
+    "d1ev": "vercel dev",
     "serve": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@vercel/node": "^1.14.1",
-    "@vercel/static-build": "^0.23.1",
     "qrcode": "^1.5.0"
   }
 }
