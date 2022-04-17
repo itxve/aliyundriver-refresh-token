@@ -10,14 +10,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "typeRoots": ["./src/types", "./node_modules/@types"],
-    "types": ["element-plus/global", "vite/client"],
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/*.ts"]
 }
