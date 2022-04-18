@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code扫码获取阿里云盘refresh token</title>
+</head>
+<script type="module" src="./index.ts"></script>
+<script>
+  function copyIt() {
+    const u = document.querySelector("#user-Info")
+    u.select()
+    document.execCommand("copy")
+    alert("复制成功")
+  }
+</script>
+
+<body>
+  <div id="app" class="main">
+    <img id="qrcode" class="qrcode-img" />
+    <div id="expire">
+      <p>二维码已失效</p>
+      <button class="refresh">刷新二维码</button>
+    </div>
+  </div>
+  <span class="main" id="tip">
+  </span>
+  <div class="main">
+    <textarea rows="15" cols="55" id="user-Info"></textarea>
+    <button class="copy" onclick="copyIt()">copy</button>
+  </div>
+</body>
+
+<style>
+  .main {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .qrcode-img {
+    box-shadow: 0px 0px 1px 1px rgb(28 28 32 / 5%), 0px 8px 24px rgb(28 28 32 / 12%);
+    border-radius: 10px;
+    width: 128px;
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button.refresh {
+    cursor: pointer;
+    font-size: 12px;
+    color: #f0f0f0;
+    background: #637dff;
+    line-height: 24px;
+    height: 24px;
+    width: auto;
+    padding: 0px 10px;
+    border-radius: 30px;
+    border: 0;
+  }
+
+  #expire {
+    background: hsla(0, 0%, 100%, .9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  #expire p {
+    font-size: 14px;
+  }
+
+  #token {
+    z-index: 100;
+  }
+
+  .show {
+    display: flex !important;
+  }
+
+  button.copy {
+    cursor: pointer;
+    font-size: 12px;
+    color: #f0f0f0;
+    background: #2f91dc;
+    line-height: 24px;
+    height: 24px;
+    width: auto;
+    padding: 0px 10px;
+    border-radius: 30px;
+    border: 0;
+  }
+</style>
+
+</html>

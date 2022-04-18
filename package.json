@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "d1ev": "vercel dev",
+    "serve": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
+    "@types/qrcode": "^1.4.2",
+    "typescript": "^4.6.3",
     "vite": "^2.9.5"
   },
   "dependencies": {
-    "@vercel/node": "^1.14.1"
+    "@vercel/node": "^1.14.1",
+    "qrcode": "^1.5.0"
   }
 }
