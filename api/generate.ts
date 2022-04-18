@@ -37,10 +37,8 @@ export default function (req: VercelRequest, res: VercelResponse) {
           if (img) {
             const image = await QRCode.toDataURL(result.codeContent);
             result.codeContent = image;
-            res.send(result);
-          } else {
-            res.send(result);
           }
+          res.send(result);
         });
       }
     )

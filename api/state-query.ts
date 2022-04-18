@@ -51,10 +51,9 @@ export default function (req: VercelRequest, res: VercelResponse) {
           const rt = JSON.parse(data).content;
           if (rt.data.qrCodeStatus === "CONFIRMED") {
             rt.data.bizExt = JSON.parse(atob(rt.data.bizExt));
-          } else {
-            //添加 一个tip
-            rt.data.tip = status[rt.data.qrCodeStatus];
           }
+          //添加 一个tip
+          rt.data.tip = status[rt.data.qrCodeStatus];
           res.send(rt);
         });
       }
