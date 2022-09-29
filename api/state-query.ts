@@ -50,7 +50,8 @@ export default function (req: VercelRequest, res: VercelResponse) {
         response.on("end", () => {
           const rt = JSON.parse(data).content;
           if (rt.data.qrCodeStatus === "CONFIRMED") {
-            rt.data.bizExt = JSON.parse(atob(rt.data.bizExt));
+            const data = Buffer.from(rt.data.bizExt, "base64");
+            rt.data.bizExt = JSON.parse(String(data));
           }
           //添加 一个tip
           rt.data.tip = status[rt.data.qrCodeStatus];

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "d1ev": "vercel dev",
+    "local": "vercel dev",
     "serve": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
