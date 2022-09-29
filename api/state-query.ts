@@ -51,7 +51,6 @@ export default function (req: VercelRequest, res: VercelResponse) {
           const rt = JSON.parse(data).content;
           if (rt.data.qrCodeStatus === "CONFIRMED") {
             const data = Buffer.from(rt.data.bizExt, "base64");
-            atob
             rt.data.bizExt = JSON.parse(String(data));
           }
           //添加 一个tip
