@@ -13,7 +13,7 @@ export function getQrCode() {
       qr = res;
       const qrcode = document.getElementById("qrcode");
       qrcode.setAttribute("src", res.codeContent);
-      checkInterval = setInterval(checkQrCode, 1000);
+      checkInterval = setInterval(checkQrCode, 2500);
     });
 }
 
@@ -34,4 +34,4 @@ export function checkQrCode() {
     });
 }
 
-setTimeout(getQrCode, 1000);
+setTimeout(getQrCode, 200);
