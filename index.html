@@ -8,14 +8,6 @@
   <title>QR Code扫码获取阿里云盘refresh token</title>
 </head>
 <script type="module" src="./index.ts"></script>
-<script>
-  function copyIt() {
-    const u = document.querySelector("#user-Info")
-    u.select()
-    document.execCommand("copy")
-    alert("复制成功 ")
-  }
-</script>
 
 <body>
   <div id="app" class="main">
@@ -25,11 +17,12 @@
       <button class="refresh">刷新二维码</button>
     </div>
   </div>
-  <span class="main" id="tip">
-  </span>
-  <div class="main">
-    <textarea rows="10" cols="55" id="user-Info"></textarea>
-    <button class="copy" onclick="copyIt()">copy</button>
+  <span class="main" id="tip"></span>
+  <div class="main" id="user">
+    <h4>用户信息</h4>
+    <img width="120px" height="120px" id="user-img" />
+    <span style="font-size: 28px; color: #673ab7;" id="nick-name"></span>
+    <span id="user-info" style="overflow: auto;width: 600px;"></span>
   </div>
 </body>
 
@@ -40,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
   .qrcode-img {
@@ -87,21 +80,12 @@
     z-index: 100;
   }
 
-  .show {
-    display: flex !important;
+  .hidden {
+    display: none !important;
   }
 
-  button.copy {
-    cursor: pointer;
-    font-size: 12px;
-    color: #f0f0f0;
-    background: #2f91dc;
-    line-height: 24px;
-    height: 24px;
-    width: auto;
-    padding: 0px 10px;
-    border-radius: 30px;
-    border: 0;
+  .show {
+    display: flex !important;
   }
 </style>
 
