@@ -33,13 +33,13 @@ export function checkQrCode() {
         expireDom.classList.add("show");
       } else if (["CONFIRMED"].includes(res.data.qrCodeStatus)) {
         console.log(res, "CONFIRMED");
-        (userInfoDom as any).innerText = JSON.stringify(
-          res.data.bizExt.pds_login_result,
-          (k, v) => (k === "userData" ? "" : v),
-          2
-        );
-        nickNameDom.innerHTML = res.data.bizExt.pds_login_result.nickName;
-        userImgDom.setAttribute("src", res.data.bizExt.pds_login_result.avatar);
+
+        const { nickName, avatar, refreshToken } =
+          res.data.bizExt.pds_login_result;
+
+        (userInfoDom as HTMLElement).innerText = refreshToken;
+        nickNameDom.innerHTML = nickName;
+        userImgDom.setAttribute("src", avatar);
         userDom.classList.remove("hidden");
         expireDom.classList.add("show");
         clearInterval(checkInterval);
