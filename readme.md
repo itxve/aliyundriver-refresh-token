@@ -13,8 +13,8 @@
 `img`: boolean
 
 **返回说明 :**
-- `t` : 一个用个查询的参数传递给 `/state-query` （tip：这个不是当前的时间戳）
-- `ck` : 一个用个查询的参数传递给 `/state-query`
+- `t` : 一个用于查询的参数传递给 `/state-query` （tip：这个不是当前的时间戳）
+- `ck` : 一个用于查询的参数传递给 `/state-query`
 - `codeContent` : `img`为true时是一个base64图片否则是二维码的接口地址（可自行绘制二维码）
 
 
