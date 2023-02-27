@@ -42,6 +42,9 @@ tip : 如果不匹配 查询结果一直是 `EXPIRED`的状态
 - `bizExt` 用户信息、token等... (已经base64解码了，可直接食用)
 
 
+## 相关项目
+[阿里云盘 Go SDK](https://github.com/chyroc/go-aliyundrive)
+
 ## Demo
 [示例](https://aliyundriver-refresh-token.vercel.app/)
 
