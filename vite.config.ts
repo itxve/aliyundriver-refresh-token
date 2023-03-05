@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+export const SPORT = process.env.SPORT;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -6,8 +7,8 @@ export default defineConfig({
     port: 8000,
     proxy: {
       "/api": {
-        target: "http://localhost:3000/",
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        target: `http://localhost:${SPORT}/`,
+        rewrite: (path) => path,
       },
     },
   },
