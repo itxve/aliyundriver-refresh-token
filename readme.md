@@ -4,14 +4,9 @@
 
 <a href="https://vercel.com/new/import?s=https://github.com/itxve/aliyundriver-refresh-token"><img src="https://vercel.com/button" height="24"></a>
 
-## 本地 开发、部署
+## 本地 开发
 
-- `yarn serve` 启动本地服务
-- `yarn web` 启动页面
-- 可修改`package.json`SPORT,两者一致即可
-
-## 本地 开发、部署(推荐 vercel)
-
+- `yarn serve`
 - `yarn vercel:dev` 需要登陆
 
 ### 生成二维码
@@ -33,7 +28,7 @@
 
 说明 : 调用此接口 ,查询二维码状态
 
-**调用例子 :** `/state-query?t=&ck=`
+**调用例子 :** `/api/state-query?t=&ck=`
 
 **必选参数 :**
 

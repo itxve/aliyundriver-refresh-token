@@ -1,5 +1,6 @@
 let qr: any = "";
 let checkInterval: NodeJS.Timer;
+const host = "";
 
 document.querySelector(".refresh")!.addEventListener("click", getQrCode);
 const userInfoDom = document.querySelector("#user-info")!;
@@ -14,7 +15,7 @@ export function getQrCode() {
   expireDom.classList.remove("show");
   userDom.classList.add("hidden");
 
-  fetch("/api/generate?img=true")
+  fetch(host + "/api/generate?img=true")
     .then((res) => res.json())
     .then((res) => {
       qr = res;
@@ -25,7 +26,7 @@ export function getQrCode() {
 }
 
 export function checkQrCode() {
-  fetch("/api/state-query?ck=" + qr.ck + "&t=" + qr.t)
+  fetch(host + "/api/state-query?ck=" + qr.ck + "&t=" + qr.t)
     .then((res) => res.json())
     .then((res) => {
       if (["EXPIRED", "CANCELED"].includes(res.data.qrCodeStatus)) {
@@ -34,8 +35,11 @@ export function checkQrCode() {
       } else if (["CONFIRMED"].includes(res.data.qrCodeStatus)) {
         console.log(res, "CONFIRMED");
 
-        const { nickName, avatar, refreshToken } =
-          res.data.bizExt.pds_login_result;
+        const {
+          nickName,
+          avatar,
+          refreshToken,
+        } = res.data.bizExt.pds_login_result;
 
         (userInfoDom as HTMLElement).innerText = refreshToken;
         nickNameDom.innerHTML = nickName;

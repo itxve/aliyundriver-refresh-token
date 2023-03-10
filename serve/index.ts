@@ -1,22 +1,28 @@
-import express from "express";
-import genCode from "../api/generate";
-import queryState from "../api/state-query";
-const app = express();
-import { SPORT } from "../vite.config";
-const SERVE_PORT = SPORT || process.env.SPORT;
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { createServer as createViteServer } from "vite";
+import { app } from "./local-serve";
+const SERVE_PORT = process.env.SPORT;
 
-app.get("/api/generate", async (req, res) => {
-  await genCode(req as any, res as any);
-});
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.get("/api/state-query", async (req, res) => {
-  await queryState(req as any, res as any);
-});
-
-app
-  .listen(SERVE_PORT, () => {
-    console.log(`api serve listen on http://localhost:${SERVE_PORT}`);
-  })
-  .on("error", (error) => {
-    console.log(error);
+async function createServer() {
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
   });
+
+  app.use(vite.middlewares);
+
+  app.use("*", async (_, res) => {
+    let indexhtml = fs.readFileSync(
+      path.resolve(__dirname, "..", "index.html"),
+      "utf-8"
+    );
+    res.status(200).set({ "Content-Type": "text/html" }).end(indexhtml);
+  });
+  app.listen(SERVE_PORT, () => {
+    console.log(`server listen on http://localhost:${SERVE_PORT}`);
+  });
+}
+createServer();

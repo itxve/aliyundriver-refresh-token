@@ -7,7 +7,6 @@
   "scripts": {
     "vercel:dev": "vercel dev --listen 4000",
     "serve": "SPORT=4000 tsx serve/index.ts",
-    "web": "SPORT=4000 vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },
