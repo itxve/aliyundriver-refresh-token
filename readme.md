@@ -78,3 +78,9 @@ tip : 如果不匹配 查询结果一直是 `EXPIRED`的状态
 ## License
 
 [The MIT License (MIT)](https://github.com/itxve/aliyundriver-refresh-token/blob/master/LICENSE)
+
+## 最后申明
+本项目仅做学习交流, 禁止用于各种非法途径！！！
+本项目仅做学习交流, 禁止用于各种非法途径！！！
+本项目仅做学习交流, 禁止用于各种非法途径！！！
+
