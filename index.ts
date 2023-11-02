@@ -54,7 +54,7 @@ export function checkQrCode() {
 export function sign() {
   const refreshToken = (userInfoDom as HTMLElement).innerText!;
   fetch(host + "/api/sign?refreshToken=" + refreshToken)
-    .then((res) => res.json())
+    .then((res) => res.text())
     .then((res) => {
       alert(res);
     });
