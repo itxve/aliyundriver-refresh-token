@@ -1,8 +1,9 @@
 let qr: any = "";
-let checkInterval: NodeJS.Timer;
+let checkInterval: NodeJS.Timeout;
 const host = "";
 
 document.querySelector(".refresh")!.addEventListener("click", getQrCode);
+document.querySelector("#sign")!.addEventListener("click", sign);
 const userInfoDom = document.querySelector("#user-info")!;
 const expireDom = document.querySelector("#expire")!;
 const tipDom = document.querySelector("#tip")!;
@@ -33,8 +34,6 @@ export function checkQrCode() {
         clearInterval(checkInterval);
         expireDom.classList.add("show");
       } else if (["CONFIRMED"].includes(res.data.qrCodeStatus)) {
-        console.log(res, "CONFIRMED");
-
         const {
           nickName,
           avatar,
@@ -49,6 +48,15 @@ export function checkQrCode() {
         clearInterval(checkInterval);
       }
       tipDom.innerHTML = res.data.tip;
+    });
+}
+
+export function sign() {
+  const refreshToken = (userInfoDom as HTMLElement).innerText!;
+  fetch(host + "/api/sign?refreshToken=" + refreshToken)
+    .then((res) => res.json())
+    .then((res) => {
+      alert(res);
     });
 }
 

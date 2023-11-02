@@ -1,3 +1,5 @@
 .history
 node_modules
 .vercel
+.yarn
+package-lock.json

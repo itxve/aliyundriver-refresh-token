@@ -48,7 +48,26 @@ tip : 如果不匹配 查询结果一直是 `EXPIRED`的状态
   - CONFIRMED: "已确认"
 - `bizExt` 用户信息、token 等... (已经 base64 解码了，可直接食用)
 
+### 签到 [源代码阿里云盘每日签到脚本 青龙面板支持](https://github.com/mrabit/aliyundriveDailyCheck)
+
+说明 : 调用此接口 ,查询进行签到
+
+**调用例子 :** `/api/sign?refreshToken=`
+
+**必选参数 :**
+
+`refreshToken` : 一个用于刷新 token 的 refreshToken
+
+**返回 :**
+
+<b>
+本月累计签到 x 天 <br/>
+第 x 天奖励领取成功: 获得 xxx
+</b>
+
 ## 相关项目
+
+[阿里云盘每日签到脚本 青龙面板支持](https://github.com/mrabit/aliyundriveDailyCheck)
 
 [阿里云盘 Go SDK](https://github.com/chyroc/go-aliyundrive)
 
