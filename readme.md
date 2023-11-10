@@ -65,6 +65,23 @@ tip : 如果不匹配 查询结果一直是 `EXPIRED`的状态
 第 x 天奖励领取成功: 获得 xxx
 </b>
 
+### 查询阿里云资源链接是否有效
+
+说明 : 调用此接口 ,查询源链接是否有效
+
+**调用例子 :** `/api/check_link?link=`
+
+**必选参数 :**
+
+`link` : 云盘资源链接
+示例：https://www.aliyundrive.com/s/{xxx}
+
+**返回说明 :**
+
+- `code` 包装的是原接口的状态 <b>`200即为有效`</b>
+- `msg` 详情信息
+- `data` 包装的是原接口的响应 (不做说明)
+
 ## 相关项目
 
 [阿里云盘每日签到脚本 青龙面板支持](https://github.com/mrabit/aliyundriveDailyCheck)
@@ -80,7 +97,7 @@ tip : 如果不匹配 查询结果一直是 `EXPIRED`的状态
 [The MIT License (MIT)](https://github.com/itxve/aliyundriver-refresh-token/blob/master/LICENSE)
 
 ## 最后申明
-本项目仅做学习交流, 禁止用于各种非法途径！！！
-本项目仅做学习交流, 禁止用于各种非法途径！！！
-本项目仅做学习交流, 禁止用于各种非法途径！！！
 
+本项目仅做学习交流, 禁止用于各种非法途径！！！
+本项目仅做学习交流, 禁止用于各种非法途径！！！
+本项目仅做学习交流, 禁止用于各种非法途径！！！
